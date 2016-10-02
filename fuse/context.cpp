@@ -13,4 +13,14 @@ void mi_init_context(memory* mem)
 	mi_get_context()->mem->initialize_mem();
 	node* root = mi_get_context()->mem->create_root();
 	mi_get_context()->root = root;
+	mi_get_context()->curr = mi_get_context()->root;
+	mi_get_context()->comm = new commands();
+}
+
+node* mi_get_destination(const char* path) 
+{
+	std::string dest(path);
+	node* res = mi_get_context()->root;
+	mi_get_context()->comm->destination(mi_get_context()->mem, res, mi_get_context()->curr, dest);
+	return res;
 }
