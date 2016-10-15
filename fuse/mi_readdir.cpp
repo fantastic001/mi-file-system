@@ -8,6 +8,8 @@ int mi_readdir (const char *path, void *buf, fuse_fill_dir_t filler, off_t offse
 	mi_log(path);
 	mi_log(" readdir()\n");
 	node* dir = mi_get_destination(path);
+	mi_log("Directory name: ");
+	mi_log(dir->name);
 	node* son = dir->younger;
 	while(son != NULL) 
 	{
