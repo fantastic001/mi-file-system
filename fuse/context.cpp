@@ -33,6 +33,7 @@ void mi_split_path(const char* path, char* basename, char* name)
 	while (path[i] != '/') i--;
 	int baselen = i;
 	for (int j = 0; j<baselen; j++) basename[j] = path[j];
+	basename[j] = '\0';
 	i++;
 	int l = 0;
 	while (path[i] != '\0') 
@@ -40,4 +41,5 @@ void mi_split_path(const char* path, char* basename, char* name)
 		name[l] = path[i];
 		i++; l++;
 	}
+	name[l] = '\0';
 }
