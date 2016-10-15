@@ -12,4 +12,5 @@ int mi_mknod(const char* name, mode_t mode, dev_t dev)
             ctx->curr,
             ctx->curr->younger);
     ctx->curr->younger = nxt;
+    return 0;
 }

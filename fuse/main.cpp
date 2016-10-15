@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
 	mi_ops.opendir = mi_opendir;
 	mi_ops.readdir = mi_readdir;
 	mi_ops.init = mi_init;
+	mi_ops.utimens = mi_utimens;
 	return fuse_main(argc, argv, &mi_ops, NULL);
 }
 
