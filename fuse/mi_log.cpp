@@ -4,7 +4,7 @@
 
 void mi_log(const char* msg) 
 {
-	FILE* f = fopen("~/log.log","a");
+	FILE* f = fopen("/home/stefan/log.log","a");
 	fprintf(f, msg);
 	fclose(f);
 }
