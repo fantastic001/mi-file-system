@@ -4,7 +4,9 @@
 
 int mi_getattr(const char *path, struct stat * fstat) 
 {
-	mi_log("getattr()\n");
+	mi_log("getattr() ");
+	mi_log(path);
+	mi_log("\n");
 	fstat->st_dev = 166;
 	fstat->st_ino = 0;
 	fstat->st_mode = S_IRWXU | S_IRWXG | S_IRWXO | S_IFDIR;	
@@ -17,6 +19,7 @@ int mi_getattr(const char *path, struct stat * fstat)
 	//fstat->st_atim = ;
 	fstat->st_blocks = 1;
 	fstat->st_blocks = 1;
+        
 	return 0;
 	//return stat("/home/stefan/", fstat);
 }

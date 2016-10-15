@@ -3,6 +3,8 @@
 
 int mi_rmdir(const char *path) 
 {
-	mi_log("readdir()\n");
+	mi_log("rmdir() ");
+	mi_log(path);
+	mi_log("\n");
 	return 1;
 }
