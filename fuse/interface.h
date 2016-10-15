@@ -5,6 +5,9 @@
 #include <fuse.h>
 #include <fcntl.h>
 
+#include <fstream>
+
+void mi_log(const char*);
 
 int mi_getattr(const char *, struct stat *);
 int mi_mkdir(const char *, mode_t);
