@@ -20,4 +20,6 @@ void mi_init_context(memory* mem);
 
 node* mi_get_destination(const char* path);
 
+void mi_split_path(const char* path, char* basename, char* name);
+
 #endif // MI_FILESYSTEM_FUSE_CONTEXT_H

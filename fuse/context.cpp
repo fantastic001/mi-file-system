@@ -24,3 +24,20 @@ node* mi_get_destination(const char* path)
 	mi_get_context()->comm->destination(mi_get_context()->mem, res, mi_get_context()->curr, dest);
 	return res;
 }
+
+void mi_split_path(const char* path, char* basename, char* name)
+{
+	int i = 0;
+	while (path[i] != '\0') i++;
+	int len = i;
+	while (path[i] != '/') i--;
+	int baselen = i;
+	for (int j = 0; j<baselen; j++) basename[j] = path[j];
+	i++;
+	int l = 0;
+	while (path[i] != '\0') 
+	{
+		name[l] = path[i];
+		i++; l++;
+	}
+}
