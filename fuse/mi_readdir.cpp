@@ -8,11 +8,14 @@ int mi_readdir (const char *path, void *buf, fuse_fill_dir_t filler, off_t offse
 	mi_log(path);
 	mi_log(" readdir()\n");
 	node* dir = mi_get_destination(path);
+	mi_log("Directory name: ");
+	mi_log(dir->name);
 	node* son = dir->younger;
 	while(son != NULL) 
 	{
-		
-		filler(buf, son->name, NULL, 0);
+		struct stat * fstat = (struct stat *) malloc(sizeof(struct stat));
+		mi_get_stat(son, fstat);
+		filler(buf, son->name, fstat, 0);
 		son = son->older_to;
 	}
 	filler(buf, ".", NULL, 0);

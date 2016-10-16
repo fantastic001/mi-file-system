@@ -2,7 +2,7 @@
 #include "interface.h"
 #include "context.h"
 
-int mi_mknod(const char* name, mode_t mode, dev_t dev)
+int mi_mknod(const char* path, mode_t mode, dev_t dev)
 {
     mi_log(name);
     mi_log("mknod()\n");
