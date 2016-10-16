@@ -4,13 +4,13 @@
 
 int mi_mknod(const char* path, mode_t mode, dev_t dev)
 {
-    mi_log(name);
+    mi_log(path);
     mi_log("mknod()\n");
 
     char base[256] = {0};
     char fn[256] = {0};
 
-    mi_split_path(name, base, fn);
+    mi_split_path(path, base, fn);
     
 
     mi_context* ctx = mi_get_context();   
