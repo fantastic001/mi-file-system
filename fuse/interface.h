@@ -7,7 +7,13 @@
 
 #include <fstream>
 
-void mi_log(const char*);
+//void mi_log(const char*);
+
+#define mi_log(...) { \
+    FILE* f = fopen("/home/stefan/log.log", "a"); \
+    fprintf(f, __VA_ARGS__); \
+    fclose(f); \
+}
 
 int mi_getattr(const char *, struct stat *);
 int mi_mkdir(const char *, mode_t);
