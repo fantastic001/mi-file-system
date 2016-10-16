@@ -14,11 +14,7 @@ int mi_mknod(const char* name, mode_t mode, dev_t dev)
     
 
     mi_context* ctx = mi_get_context();   
-    node* folder = ctx->root;
-    if (base[0]!=0) 
-    {
-        folder = mi_get_destination(base);
-    }
+    node* folder = mi_get_destination(base);
     node * nxt = ctx->mem->create_node(
             const_cast<char*>(fn), 
             false,
