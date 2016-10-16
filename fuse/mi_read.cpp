@@ -38,5 +38,5 @@ int mi_read (const char *path, char *buf, size_t size, off_t offset, struct fuse
             from_fr = *((int*)( (char*)(part->mem[from_fr] + fr_mem * 1024 - 4)) );
         }
         mi_log("' readed [eof] %i\n", readed);
-        return readed;
+        return 0;
 }
