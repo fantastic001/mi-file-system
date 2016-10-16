@@ -27,5 +27,6 @@ int mi_opendir (const char *, struct fuse_file_info *);
 int mi_readdir (const char *, void *, fuse_fill_dir_t, off_t, struct fuse_file_info *);
 void* mi_init(struct fuse_conn_info *conn);
 int mi_utimens(const char *name, const struct timespec tv[2]);
+int mi_unlink(const char *);
 
 #endif // MI_FILESYSTEM_FUSE_INTERFACE_H
