@@ -22,4 +22,6 @@ node* mi_get_destination(const char* path);
 
 void mi_split_path(const char* path, char* basename, char* name);
 
+void mi_get_stat(node*, struct stat*);
+
 #endif // MI_FILESYSTEM_FUSE_CONTEXT_H
